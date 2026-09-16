@@ -1,85 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IA na Proteção do Meio Ambiente</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IA pelo Meio Ambiente</title>
+  <!-- Fonte Google Fonts para visual moderno -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Biblioteca Mermaid.js para criar o fluxograma -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 </head>
 <body>
 
-  <header class="header">
-    <h1>Como a IA Protege o Meio Ambiente 🌿</h1>
-    <p>Conectando tecnologia e sustentabilidade para um futuro mais verde</p>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="container">
+      <span class="badge">🌱 Tecnologia & Sustentabilidade</span>
+      <h1>Como a Inteligência Artificial Ajuda a Proteger o Meio Ambiente</h1>
+      <p>Um fluxo interativo demonstrando a jornada da IA no combate às mudanças climáticas e preservação do planeta.</p>
+    </div>
   </header>
 
+  <!-- Conteúdo Principal / Fluxograma -->
   <main class="container">
-    <section class="flowchart">
+    <section class="card flowchart-section">
+      <h2>Fluxograma de Impacto da IA</h2>
+      <p class="instruction">Passe o mouse ou toque nos blocos para interagir!</p>
       
-      <!-- Passo 1 -->
-      <div class="card" data-step="1">
-        <div class="card-icon">📡</div>
-        <div class="card-step">Passo 01</div>
-        <h3>Coleta de Dados Global</h3>
-        <p>Sensores, satélites e IoT capturam dados climáticos, taxa de desmatamento e qualidade do ar em tempo real.</p>
+      <!-- O Mermaid renderizará o fluxograma dentro desta div -->
+      <div class="mermaid" id="diagram">
+        graph TD
+          classDef default fill:#F4F9F4,stroke:#A3E4D7,stroke-width:2px,color:#2C3E50,rx:8,ry:8;
+          classDef root fill:#A8E6CF,stroke:#52BE80,stroke-width:2px,color:#1E8449,font-weight:bold;
+          classDef sub fill:#D4E6F1,stroke:#7FB3D5,stroke-width:2px,color:#2471A3;
+
+          Start[🌐 Coleta Global de Dados Ambiental]:::root
+          Start --> IA[🤖 IA & Machine Learning]:::root
+
+          IA --> Monitoramento[📡 Monitoramento em Tempo Real]:::sub
+          IA --> Otimizacao[⚡ Otimização de Recursos]:::sub
+          IA --> Previsao[🔮 Modelagem & Previsão]:::sub
+
+          Monitoramento --> M1[🌳 Detecção de Desmatamento Via Satélite]
+          Monitoramento --> M2[🐋 Rastreamento e Proteção da Vida Selvagem]
+          Monitoramento --> M3[🌊 Sensores de Qualidade da Água e Ar]
+
+          Otimizacao --> O1[💡 Cidades Inteligentes & Redução de Energia]
+          Otimizacao --> O2[🚜 Agricultura de Precisão Sem Desperdício]
+          Otimizacao --> O3[🔄 Gestão Eficiente de Resíduos e Reciclagem]
+
+          Previsao --> P1[🌪️ Alerta Precoce de Desastres Naturais]
+          Previsao --> P2[☀️ Simulação do Impacto do Clima em Décadas]
+
+          M1 & M2 & M3 & O1 & O2 & O3 & P1 & P2 --> Result[🌍 Planeta Sustentável & Futuro Protegido]:::root
       </div>
-
-      <div class="arrow">↓</div>
-
-      <!-- Passo 2 -->
-      <div class="card" data-step="2">
-        <div class="card-icon">🧠</div>
-        <div class="card-step">Passo 02</div>
-        <h3>Processamento por IA</h3>
-        <p>Algoritmos de aprendizado de máquina analisam grandes volumes de dados para identificar padrões e anomalias.</p>
-      </div>
-
-      <div class="arrow">↓</div>
-
-      <!-- Passo 3 -->
-      <div class="card" data-step="3">
-        <div class="card-icon">📊</div>
-        <div class="card-step">Passo 03</div>
-        <h3>Previsões & Diagnósticos</h3>
-        <p>Simulações preveem eventos como queimadas, secas extremas, tempestades e rotas de poluição nos oceanos.</p>
-      </div>
-
-      <div class="arrow">↓</div>
-
-      <!-- Passo 4 -->
-      <div class="card" data-step="4">
-        <div class="card-icon">🌱</div>
-        <div class="card-step">Passo 04</div>
-        <h3>Ações Automatizadas & Guiadas</h3>
-        <p>Drones para reflorestamento, otimização de redes elétricas renováveis e alertas preventivos para governos e ONGs.</p>
-      </div>
-
-      <div class="arrow">↓</div>
-
-      <!-- Resultado -->
-      <div class="card result-card" data-step="5">
-        <div class="card-icon">🌍</div>
-        <div class="card-step">Resultado</div>
-        <h3>Planeta Protegido</h3>
-        <p>Redução da pegada de carbono, preservação da biodiversidade e decisões baseadas em dados precisos.</p>
-      </div>
-
     </section>
 
-    <!-- Seção de detalhes ao clicar -->
-    <aside id="detail-box" class="detail-box hidden">
-      <h4 id="detail-title">Selecione uma etapa acima</h4>
-      <p id="detail-desc">Clique nos blocos do fluxograma para ver mais detalhes sobre o papel da IA em cada fase.</p>
-    </aside>
+    <!-- Cards Informativos Adicionais -->
+    <section class="info-grid">
+      <div class="card info-card">
+        <div class="icon">🛰️</div>
+        <h3>Monitoramento</h3>
+        <p>Satélites e visões computacionais detectam focos de incêndio e desmatamento ilegal em minutos.</p>
+      </div>
+      <div class="card info-card">
+        <div class="icon">🚜</div>
+        <h3>Agricultura Verde</h3>
+        <p>Algoritmos reduzem o uso de pesticidas e otimizam a irrigação, economizando água e protegendo o solo.</p>
+      </div>
+      <div class="card info-card">
+        <div class="icon">⚡</div>
+        <h3>Energia Eficiente</h3>
+        <p>A IA prevê a demanda de energia e gerencia redes elétricas baseadas em fontes renováveis (solar e eólica).</p>
+      </div>
+    </section>
   </main>
 
+  <!-- Rodapé -->
   <footer>
-    <p>Projeto Open Source para a Preservação Ambiental • Desenvolvido com HTML, CSS e JS</p>
+    <div class="container">
+      <p>Desenvolvido para proteger o planeta 💚 | Projeto Open Source no GitHub</p>
+    </div>
   </footer>
 
+  <!-- Script JS -->
   <script src="script.js"></script>
 </body>
 </html>
