@@ -3,90 +3,150 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IA pelo Meio Ambiente</title>
-  <!-- Fonte Google Fonts para visual moderno -->
+  <title>Fluxograma Interativo: IA pelo Meio Ambiente</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <!-- Estilos CSS -->
-  <link rel="stylesheet" href="style.css" />
-  <!-- Biblioteca Mermaid.js para criar o fluxograma -->
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="min-h-screen flex flex-col justify-between selection:bg-emerald-100 selection:text-emerald-900">
 
-  <!-- Cabeçalho -->
-  <header>
-    <div class="container">
-      <span class="badge">🌱 Tecnologia & Sustentabilidade</span>
-      <h1>Como a Inteligência Artificial Ajuda a Proteger o Meio Ambiente</h1>
-      <p>Um fluxo interativo demonstrando a jornada da IA no combate às mudanças climáticas e preservação do planeta.</p>
+  <header class="w-full pt-8 pb-4 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100/90 text-emerald-800 text-xs font-semibold uppercase tracking-wider border border-emerald-200/80 mb-3 shadow-sm">
+        <i class="fa-solid fa-leaf text-emerald-600"></i> Preservação Ambiental & IA
+      </span>
+      <h1 class="font-heading text-3xl sm:text-5xl font-extrabold text-slate-800 tracking-tight">
+        Fluxograma Interativo: IA e Meio Ambiente
+      </h1>
+      <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto mt-2">
+        Navegue passo a passo pelo fluxograma para compreender como a Inteligência Artificial processa dados e toma decisões para proteger o ecossistema.
+      </p>
     </div>
   </header>
 
-  <!-- Conteúdo Principal / Fluxograma -->
-  <main class="container">
-    <section class="card flowchart-section">
-      <h2>Fluxograma de Impacto da IA</h2>
-      <p class="instruction">Passe o mouse ou toque nos blocos para interagir!</p>
-      
-      <!-- O Mermaid renderizará o fluxograma dentro desta div -->
-      <div class="mermaid" id="diagram">
-        graph TD
-          classDef default fill:#F4F9F4,stroke:#A3E4D7,stroke-width:2px,color:#2C3E50,rx:8,ry:8;
-          classDef root fill:#A8E6CF,stroke:#52BE80,stroke-width:2px,color:#1E8449,font-weight:bold;
-          classDef sub fill:#D4E6F1,stroke:#7FB3D5,stroke-width:2px,color:#2471A3;
-
-          Start[🌐 Coleta Global de Dados Ambiental]:::root
-          Start --> IA[🤖 IA & Machine Learning]:::root
-
-          IA --> Monitoramento[📡 Monitoramento em Tempo Real]:::sub
-          IA --> Otimizacao[⚡ Otimização de Recursos]:::sub
-          IA --> Previsao[🔮 Modelagem & Previsão]:::sub
-
-          Monitoramento --> M1[🌳 Detecção de Desmatamento Via Satélite]
-          Monitoramento --> M2[🐋 Rastreamento e Proteção da Vida Selvagem]
-          Monitoramento --> M3[🌊 Sensores de Qualidade da Água e Ar]
-
-          Otimizacao --> O1[💡 Cidades Inteligentes & Redução de Energia]
-          Otimizacao --> O2[🚜 Agricultura de Precisão Sem Desperdício]
-          Otimizacao --> O3[🔄 Gestão Eficiente de Resíduos e Reciclagem]
-
-          Previsao --> P1[🌪️ Alerta Precoce de Desastres Naturais]
-          Previsao --> P2[☀️ Simulação do Impacto do Clima em Décadas]
-
-          M1 & M2 & M3 & O1 & O2 & O3 & P1 & P2 --> Result[🌍 Planeta Sustentável & Futuro Protegido]:::root
+  <main class="max-w-6xl mx-auto px-4 w-full flex-grow my-4">
+    <div class="bg-white/90 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-white/80 shadow-lg mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl font-bold shrink-0">
+          <i class="fa-solid fa-route"></i>
+        </div>
+        <div>
+          <h2 id="current-step-title" class="font-heading font-bold text-slate-800 text-base sm:text-lg">Etapa 1: Início</h2>
+          <p id="current-step-subtitle" class="text-xs text-slate-500">Clique nos nós ou utilize os botões para navegar</p>
+        </div>
       </div>
-    </section>
 
-    <!-- Cards Informativos Adicionais -->
-    <section class="info-grid">
-      <div class="card info-card">
-        <div class="icon">🛰️</div>
-        <h3>Monitoramento</h3>
-        <p>Satélites e visões computacionais detectam focos de incêndio e desmatamento ilegal em minutos.</p>
+      <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+        <div class="text-right hidden sm:block mr-2">
+          <span class="text-[11px] font-semibold text-slate-400 block uppercase">Progresso</span>
+          <span id="step-counter" class="text-xs font-bold text-emerald-700">Passo 1 de 7</span>
+        </div>
+
+        <button id="btn-prev" onclick="changeStep(-1)" disabled class="px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed text-xs font-semibold transition-all flex items-center gap-2 shadow-sm">
+          <i class="fa-solid fa-arrow-left"></i> Passo Anterior
+        </button>
+
+        <button id="btn-next" onclick="changeStep(1)" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs transition-all flex items-center gap-2 shadow-md shadow-emerald-600/20">
+          <span>Próximo Passo</span> <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <button onclick="resetFlowchart()" title="Reiniciar" class="p-2.5 rounded-xl border border-slate-200 bg-white text-slate-500 hover:text-emerald-700 hover:bg-slate-50 transition-all shadow-sm">
+          <i class="fa-solid fa-rotate-right text-xs"></i>
+        </button>
       </div>
-      <div class="card info-card">
-        <div class="icon">🚜</div>
-        <h3>Agricultura Verde</h3>
-        <p>Algoritmos reduzem o uso de pesticidas e otimizam a irrigação, economizando água e protegendo o solo.</p>
+    </div>
+
+    <div class="bg-white/85 backdrop-blur-xl rounded-3xl p-6 sm:p-10 border border-white shadow-2xl relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:24px_24px]"></div>
+
+      <div class="relative max-w-4xl mx-auto py-4">
+        <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" id="flowchart-svg" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrow-default" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" class="flow-arrow" />
+            </marker>
+            <marker id="arrow-active" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" class="flow-arrow active" />
+            </marker>
+          </defs>
+
+          <path id="line-1-2" class="flow-line" marker-end="url(#arrow-default)" d="M 50% 70 L 50% 125" />
+          <path id="line-2-3" class="flow-line" marker-end="url(#arrow-default)" d="M 50% 185 L 50% 230" />
+          <path id="line-3-4" class="flow-line" marker-end="url(#arrow-default)" d="M 50% 310 L 20% 310 L 20% 380" />
+          <path id="line-3-5" class="flow-line" marker-end="url(#arrow-default)" d="M 50% 380 L 50% 380" />
+          <path id="line-3-6" class="flow-line" marker-end="url(#arrow-default)" d="M 50% 310 L 80% 310 L 80% 380" />
+          <path id="line-4-7" class="flow-line" marker-end="url(#arrow-default)" d="M 20% 470 L 20% 515 L 50% 515 L 50% 550" />
+          <path id="line-5-7" class="flow-line" marker-end="url(#arrow-default)" d="M 50% 470 L 50% 550" />
+          <path id="line-6-7" class="flow-line" marker-end="url(#arrow-default)" d="M 80% 470 L 80% 515 L 50% 515 L 50% 550" />
+        </svg>
+
+        <div class="relative z-10 flex flex-col gap-10">
+          <div class="flex justify-center">
+            <div id="node-1" onclick="selectStep(1)" class="flow-node shape-oval px-8 py-3.5 text-center shadow-md">
+              <span class="text-[10px] font-bold tracking-widest uppercase text-emerald-800 block">Início</span>
+              <h3 class="font-heading font-bold text-slate-800 text-sm sm:text-base">1. Coleta Global de Dados</h3>
+            </div>
+          </div>
+
+          <div class="flex justify-center">
+            <div id="node-2" onclick="selectStep(2)" class="flow-node shape-rect px-8 py-3.5 text-center shadow-md max-w-sm w-full">
+              <span class="text-[10px] font-bold tracking-widest uppercase text-sky-800 block">Ação / Processo</span>
+              <h3 class="font-heading font-bold text-slate-800 text-sm sm:text-base">2. Processamento IA & ML</h3>
+            </div>
+          </div>
+
+          <div class="flex justify-center my-2">
+            <div id="node-3" onclick="selectStep(3)" class="flow-node shape-rhombus shadow-md">
+              <div class="shape-rhombus-content p-2">
+                <span class="text-[9px] font-bold uppercase text-emerald-800 block">Decisão</span>
+                <h3 class="font-heading font-bold text-slate-800 text-xs sm:text-sm leading-tight">3. Qual Ação Priorizar?</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 pt-2">
+            <div id="node-4" onclick="selectStep(4)" class="flow-node shape-rect p-4 text-center shadow-md">
+              <span class="text-[10px] font-bold uppercase text-sky-800 block">Ramo A</span>
+              <h3 class="font-heading font-bold text-slate-800 text-xs sm:text-sm">4. Monitoramento em Tempo Real</h3>
+              <p class="text-[11px] text-slate-600 mt-1">Desmatamento & Fauna</p>
+            </div>
+
+            <div id="node-5" onclick="selectStep(5)" class="flow-node shape-rect p-4 text-center shadow-md">
+              <span class="text-[10px] font-bold uppercase text-sky-800 block">Ramo B</span>
+              <h3 class="font-heading font-bold text-slate-800 text-xs sm:text-sm">5. Otimização de Recursos</h3>
+              <p class="text-[11px] text-slate-600 mt-1">Energia & Agricultura</p>
+            </div>
+
+            <div id="node-6" onclick="selectStep(6)" class="flow-node shape-rect p-4 text-center shadow-md">
+              <span class="text-[10px] font-bold uppercase text-sky-800 block">Ramo C</span>
+              <h3 class="font-heading font-bold text-slate-800 text-xs sm:text-sm">6. Previsão Climática</h3>
+              <p class="text-[11px] text-slate-600 mt-1">Alertas Precoces & Modelagem</p>
+            </div>
+          </div>
+
+          <div class="flex justify-center pt-2">
+            <div id="node-7" onclick="selectStep(7)" class="flow-node shape-oval px-10 py-4 text-center shadow-md">
+              <span class="text-[10px] font-bold tracking-widest uppercase text-emerald-800 block">Fim / Resultado</span>
+              <h3 class="font-heading font-bold text-slate-800 text-base">7. Planeta Sustentável</h3>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card info-card">
-        <div class="icon">⚡</div>
-        <h3>Energia Eficiente</h3>
-        <p>A IA prevê a demanda de energia e gerencia redes elétricas baseadas em fontes renováveis (solar e eólica).</p>
-      </div>
-    </section>
+
+      <div id="step-detail-box" class="mt-8 p-6 rounded-2xl bg-white border border-emerald-100 shadow-xl shadow-emerald-900/5 animate-fadeIn"></div>
+    </div>
   </main>
 
-  <!-- Rodapé -->
-  <footer>
-    <div class="container">
-      <p>Desenvolvido para proteger o planeta 💚 | Projeto Open Source no GitHub</p>
+  <footer class="w-full bg-white/60 backdrop-blur-md border-t border-slate-200/60 py-4 px-4 text-center text-xs text-slate-500 mt-8">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <p>Desenvolvido para Conservação Ambiental e Inteligência Artificial 🌱</p>
+      <p class="text-slate-400">Paleta de Cores Pastéis: Verde, Azul e Creme</p>
     </div>
   </footer>
 
-  <!-- Script JS -->
   <script src="script.js"></script>
 </body>
 </html>
